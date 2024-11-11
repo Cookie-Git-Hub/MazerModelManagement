@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazer Model</title>
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+    
+<body>
+    <form id="application" action="/application" method="POST" enctype="multipart/form-data">
+        <div class="tab">
+            <div class="content">
+                <div class="agency-name">
+                    <h2 class="title">Mazer Model Management</h2>
+                </div>
+                <div>
+                    <p class="description">Обрати мову/Choose a language</p>
+                    <div class="button-container">
+                        <button class="language-button ua"><img src="/img/Ukraine_Flag.png"></button>
+                        <button class="language-button en"><img src="/img/USA_Flag.png"></button>
+                    </div>
+                </div>
+                <div>
+                    <div class="agency-info">
+                        <h4 class="subtitle ua" data-en="Wanna be a model?" data-ua="Хочеш стати моделлю?">Wanna be a
+                            model?
+                        </h4>
+                    </div>
+                    <button class="cta-button" onclick="nextPrev(1)" data-en="Complete the form →"
+                        data-ua="Заповнити форму →">Complete the form →</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="content">
+                <h4 data-en="What is your name?" data-ua="Як тебе звати?">What is your name?</h4>
+                <p><input type="text" name="name" class="input-field" placeholder="Name Surename" required></p>
+                <button class="cta-button" onclick="nextPrev(1)" data-en="Next page →"
+                    data-ua="Наступна сторінка →">Next
+                    page →</button>
+                <button class="cta-button" onclick="nextPrev(-1)" data-en="← Back" data-ua="← Назад">← Back</button>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="content">
+                <h4 data-en="What is your height (cm)?" data-ua="Який твій зріст (см)?">What is your height (cm)?</h4>
+                <p><input type="number" name="height" class="input-field" placeholder="180" required></p>
+                <button class="cta-button" onclick="nextPrev(1)" data-en="Next page →"
+                    data-ua="Наступна сторінка →">Next page →</button>
+                <button class="cta-button" onclick="nextPrev(-1)" data-en="← Back" data-ua="← Назад">← Back</button>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="content">
+                <h4 data-en="How old are you?" data-ua="Скільки тобі років?">How old are you?</h4>
+                <p><input type="number" name="age" class="input-field" placeholder="18" required></p>
+                <button class="cta-button" onclick="nextPrev(1)" data-en="Next page →"
+                    data-ua="Наступна сторінка →">Next
+                    page →</button>
+                <button class="cta-button" onclick="nextPrev(-1)" data-en="← Back" data-ua="← Назад">← Back</button>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="content">
+                <!-- nationality -->
+                <h4 data-en="What is your nationality?" data-ua="Яка твоя національність?">What is your nationality?
+                </h4>
+                <p><input type="text" name="nationality" class="input-field" placeholder="Country" required></p>
+                <button class="cta-button" onclick="nextPrev(1)" data-en="Next page →"
+                    data-ua="Наступна сторінка →">Next
+                    page →</button>
+                <button class="cta-button" onclick="nextPrev(-1)" data-en="← Back" data-ua="← Назад">← Back</button>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="content">
+                <!-- based  -->
+                <h4 data-en="Where are you based?" data-ua="Де ти проживаєш?">Where are you based?</h4>
+                <p><input type="text" name="based" class="input-field" placeholder="Country" required></p>
+                <button class="cta-button" onclick="nextPrev(1)" data-en="Next page →"
+                    data-ua="Наступна сторінка →">Next
+                    page →</button>
+                <button class="cta-button" onclick="nextPrev(-1)" data-en="← Back" data-ua="← Назад">← Back</button>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="content">
+                <h4 data-en="Example of measurements" data-ua="Приклад замірів">Example of measurements</h4>
+                <div class="exemple">
+                    <img class="img_exemple" src="/img/Measurements.jpg">
+                </div>
+                <button class="cta-button" onclick="nextPrev(1)" data-en="Next page →"
+                    data-ua="Наступна сторінка →">Next
+                    page →</button>
+                <button class="cta-button" onclick="nextPrev(-1)" data-en="← Back" data-ua="← Назад">← Back</button>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="content">
+                <h4 data-en="What is your measurements (bust/waist/hips)?"
+                    data-ua="Які твої параметри (груди/талія/стегна)?">What is your measurements (bust/waist/hips)?</h4>
+                <!-- measurements  -->
+                <p><input type="number" name="bust" class="input-field" required></p>
+                <p><input type="number" name="waist" class="input-field" required></p>
+                <p><input type="number" name="hips" class="input-field" required></p>
+                <button class="cta-button" onclick="nextPrev(1)" data-en="Next page →"
+                    data-ua="Наступна сторінка →">Next
+                    page →</button>
+                <button class="cta-button" onclick="nextPrev(-1)" data-en="← Back" data-ua="← Назад">← Back</button>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="content">
+                <h4 data-en="What is your instagram?" data-ua="Який твій Instagram?">What is your instagram?</h4>
+                <!-- height  -->
+                <p><input type="text" name="instagram" class="input-field" placeholder="@nickname" required></p>
+                <button class="cta-button" onclick="nextPrev(1)" data-en="Next page →"
+                    data-ua="Наступна сторінка →">Next
+                    page →</button>
+                <button class="cta-button" onclick="nextPrev(-1)" data-en="← Back" data-ua="← Назад">← Back</button>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="content">
+                <h4 data-en="What is your contact number/nickname in telegram?"
+                    data-ua="Який твій контактний номер або нікнейм у Telegram?">What is your contact number/nickname in
+                    telegram?</h4>
+                <!-- contact  -->
+                <p><input type="text" id="contact" name="contact" class="input-field" placeholder="number/nickname"
+                        required></p>
+                <!-- <span class="error" aria-live="polite"></span> -->
+                <button class="cta-button" onclick="nextPrev(1)" data-en="Next page →"
+                    data-ua="Наступна сторінка →">Next
+                    page →</button>
+                <button class="cta-button" onclick="nextPrev(-1)" data-en="← Back" data-ua="← Назад">← Back</button>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="content">
+                <h4 data-en="Example for adding photos and videos" data-ua="Приклад для додавання фото та відео">Example
+                    for
+                    adding photos and videos</h4>
+                <div class="exemple">
+                    <img class="img_exemple1" src="/img/Exemple1.jpg">
+                    <video class="exemple_video1" controls>
+                        <source src="/img/Exemple3.MP4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video class="exemple_video" controls>
+                        <source src="/img/Exemple2.MP4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <button class="cta-button" onclick="nextPrev(1)" data-en="Next page →"
+                    data-ua="Наступна сторінка →">Next
+                    page →</button>
+                <button class="cta-button" onclick="nextPrev(-1)" data-en="← Back" data-ua="← Назад">← Back</button>
+            </div>
+        </div>
+
+
+        <div class="tab">
+            <div class="content">
+                <!-- photo  -->
+                <div class="container">
+                    <h4 data-en="Add photos or videos (Max. 8)" data-ua="Додайте фото або відео (Макс. 8)">Add photos or
+                        videos (Max. 8)</h4>
+                    <div class="instructions">
+                        <strong>Требования к медиа</strong><br>
+                        Встаньте перед окном и сделайте селфи или снимите видео прямо в боте. Используйте минимум
+                        макияжа на
+                        лице и не ретушируйте медиа.
+                    </div>
+                    <div class="photo-section" id="photoSection">
+                        <!-- Здесь будут добавлены медиа -->
+                    </div>
+                    <input type="file" accept="image/*,video/*" id="mediaInput" name="mediaInput" style="display: none;"
+                        onchange="addMedia(event)" multiple required>
+                </div>
+
+                <button class="cta-button" onclick="nextPrev(1)" data-en="Next page →" data-ua="Наступна сторінка →"
+                    type="submit">Next
+                    page →</button>
+                <button class="cta-button" onclick="nextPrev(-1)" data-en="← Back" data-ua="← Назад">← Back</button>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="content">
+                <h4 data-en="About me" data-ua="Про себе">About me</h4>
+                <!-- contact  -->
+                <p><input type="text" id="about" name="about" class="input-field" placeholder="Text..." required></p>
+                <!-- <span class="error" aria-live="polite"></span> -->
+                <button class="cta-button" onclick="nextPrev(1)" data-en="Submit →" data-ua="Подати заявку →">Submit
+                    →</button>
+                <button class="cta-button" onclick="nextPrev(-1)" data-en="← Back" data-ua="← Назад">← Back</button>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+    </form>
+</body>
+
+</html>
