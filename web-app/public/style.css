@@ -7,6 +7,9 @@ body, html {
   justify-content: center;
   align-items: center;
   background-color: #f0f0f0;
+  padding-bottom: 150px;
+  padding-top: 30px;
+  overflow-y: scroll; 
 }
 
 #preloader {

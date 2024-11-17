@@ -27,6 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+document.querySelectorAll('input, textarea').forEach(input => {
+  input.addEventListener('focus', () => {
+      setTimeout(() => {
+          window.scrollTo({
+              top: input.getBoundingClientRect().top + window.scrollY - 100, // -100 отодвигает немного выше
+              behavior: 'smooth'
+          });
+      }, 300);
+  });
+});
 
 let currentQuestion = 0;
 const questions = document.querySelectorAll('.question');
