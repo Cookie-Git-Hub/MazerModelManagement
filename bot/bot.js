@@ -7,13 +7,13 @@ const { Telegraf } = require("telegraf");
 const bot = new Telegraf(telegramToken);
 
 bot.start((ctx) => {
-  ctx.reply("Заполните форму, нажав на кнопку ниже.", {
+  ctx.reply("Fill out the form by clicking the button below. \nЗаповніть форму, натиснувши кнопку нижче.", {
     reply_markup: {
       inline_keyboard: [
         [
           {
-            text: "Открыть форму",
-            web_app: { url: "https://3e47-37-214-30-223.ngrok-free.app" },
+            text: "Open form",
+            web_app: { url: "https://5fd8-37-214-30-223.ngrok-free.app" },
           },
         ],
       ],
@@ -22,7 +22,6 @@ bot.start((ctx) => {
 });
 
 bot.launch();
-console.log("Бот запущен и готов открыть Web App");
 
 async function sendMessageToTelegram(data, files) {
   const messageText = `📋Подана новая заявка📋\n <b>Имя:</b> ${data.name}\n <b>Рост:</b> ${data.height}\n <b>Возраст:</b> ${data.age}\n <b>Национальность:</b> ${data.nationality}\n <b>Проживает:</b> ${data.based}\n <b>Замеры:</b> ${data.bust}/${data.waist}/${data.hips}\n <b>Instagram:</b> ${data.instagram}\n <b>Контактные данные:</b> ${data.contact}\n <b>О себе:</b> ${data.about}`;
@@ -78,7 +77,7 @@ async function sendMessageToTelegram(data, files) {
   await axios.post(`${TELEGRAM_API}/sendMediaGroup`, formData, {
     headers: formData.getHeaders(),
   }).catch((error) => {
-    console.error('Ошибка при отправке файлов в Telegram:', error);
+    console.error('Error sending files to Telegram:', error);
   });
 
 }

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const initData = window.Telegram.WebApp.initData;
 
-  fetch(`https://3e47-37-214-30-223.ngrok-free.app/validate`, {
+  fetch(`https://5fd8-37-214-30-223.ngrok-free.app/validate`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -11,18 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
   .then((response) => response.json())
   .then((data) => {
     if (data.result) {
-      // Если валидация успешна, разрешаем пользователю взаимодействовать
-      console.log("Валидация прошла успешно");
+      console.log("Validation was successful");
     } else {
-      // Если валидация неуспешна, показываем предупреждение и закрываем WebApp
-      alert("Доступ запрещен: валидация не пройдена. Приложение должно быть открыто через Telegram.");
+      alert("Access denied: validation failed. The application must be opened via Telegram.");
       window.Telegram.WebApp.close();
       window.close();
     }
   })
   .catch((error) => {
-    console.error("Ошибка при проверке данных:", error);
-    alert("Произошла ошибка, закрытие приложения.");
+    console.error("Error while checking data:", error);
+    alert("An error occurred, closing the application.");
     window.Telegram.WebApp.close();
   });
 });

@@ -12,7 +12,6 @@ const SECRET_KEY = crypto
   .createHmac("sha256", BOT_TOKEN)
   .update("WebAppData")
   .digest();
-console.log("SECRET_KEY на сервере:", SECRET_KEY.toString("hex"));
 
 app.use(express.json());
 app.use(express.static("./web-app/public"));
@@ -73,21 +72,6 @@ app.post("/submit", upload.array("files", 8), async (req, res) => {
       } = req.body;
       const files = req.files;
 
-      console.log("Полученные данные:", {
-        name,
-        height,
-        age,
-        nationality,
-        based,
-        bust,
-        waist,
-        hips,
-        instagram,
-        contact,
-        about,
-        files,
-      }); // Добавьте вывод данных для проверки
-
       if (
         !name ||
         !height ||
@@ -101,18 +85,18 @@ app.post("/submit", upload.array("files", 8), async (req, res) => {
         !contact ||
         !about
       ) {
-        console.error("Ошибка: отсутствуют обязательные поля");
+        console.error("Error: Required fields are missing");
         return res.status(400).send({
           success: false,
-          message: "Заполните все обязательные поля.",
+          message: "Please fill in all required fields.",
         });
       }
 
       if (!files || files.length === 0) {
-        console.error("Ошибка: отсутствуют файлы");
+        console.error("Error: missing files");
         return res
           .status(400)
-          .send({ success: false, message: "Необходимо прикрепить файлы." });
+          .send({ success: false, message: "You must attach files." });
       }
 
       await sendMessageToTelegram(
@@ -133,18 +117,18 @@ app.post("/submit", upload.array("files", 8), async (req, res) => {
       );
       res
         .status(200)
-        .send({ success: true, message: "Заявка успешно отправлена!" });
+        .send({ success: true, message: "Application sent successfully!" });
     } else {
-      console.error("Неинициализированый вход");
+      console.error("Uninitialized input");
       return res
         .status(503)
         .send({ success: false, message: "Use to tg WebApp." });
     }
   } catch (error) {
-    console.error("Ошибка при отправке данных:", error);
+    console.error("Error sending data:", error);
     res
       .status(500)
-      .send({ success: false, message: "Ошибка при отправке данных" });
+      .send({ success: false, message: "Error sending data" });
   }
 });
 
