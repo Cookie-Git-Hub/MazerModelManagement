@@ -1,3 +1,35 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const initData = window.Telegram.WebApp.initData;
+
+  fetch(`https://3e47-37-214-30-223.ngrok-free.app/validate`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ initData }),
+  })
+  .then((response) => response.json())
+  .then((data) => {
+    if (data.result) {
+      // Если валидация успешна, разрешаем пользователю взаимодействовать
+      console.log("Валидация прошла успешно");
+    } else {
+      // Если валидация неуспешна, показываем предупреждение и закрываем WebApp
+      alert("Доступ запрещен: валидация не пройдена. Приложение должно быть открыто через Telegram.");
+      window.Telegram.WebApp.close();
+      window.close();
+    }
+  })
+  .catch((error) => {
+    console.error("Ошибка при проверке данных:", error);
+    alert("Произошла ошибка, закрытие приложения.");
+    window.Telegram.WebApp.close();
+  });
+});
+
+
+
+
 let currentQuestion = 0;
 const questions = document.querySelectorAll('.question');
 const nextButton = document.getElementById('next-btn');
@@ -29,7 +61,6 @@ function nextQuestion() {
   updateButtons();
 }
 
-
 function previousQuestion() {
   
   hideQuestion(currentQuestion);
@@ -38,9 +69,7 @@ function previousQuestion() {
   updateButtons();
 }
 
-
 function updateButtons() {
-  console.log(currentQuestion)
   if (currentQuestion > 0 && currentQuestion !== 10) {
     prevButton.style.padding = "10px 20px";
     prevButton.style.backgroundColor = "rgb(56, 56, 56)";
@@ -53,8 +82,6 @@ function updateButtons() {
   }else{
     prevButton.style.display = "none";
   }
-  
-  
 
   if (currentQuestion === questions.length - 1) {
     nextButton.disabled = true;
@@ -63,7 +90,6 @@ function updateButtons() {
  
 }
 
-// Инициализация первого вопроса
 showQuestion(currentQuestion);
 updateButtons();
 
@@ -77,8 +103,6 @@ function setLanguage(lang) {
     el.innerText = el.getAttribute(`data-${lang}`);
   });
 }
-
-
 
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
@@ -133,7 +157,7 @@ function handleFileSelect(event) {
   const files = Array.from(event.target.files);
 
   if (selectedFiles.length + files.length > 8) {
-    alert("You can upload no more than 8 files.");
+    alert("Вы можете загрузить не более 8 файлов.");
     return;
   }
 
