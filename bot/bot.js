@@ -7,13 +7,13 @@ const { Telegraf } = require("telegraf");
 const bot = new Telegraf(telegramToken);
 
 bot.start((ctx) => {
-  ctx.reply("Fill out the form by clicking the button below. \nЗаповніть форму, натиснувши кнопку нижче.", {
+  ctx.reply("🇺🇸Click the button below to fill out the form. \n🇺🇦Натисніть кнопку внизу, щоб заповнити форму.", {
     reply_markup: {
       inline_keyboard: [
         [
           {
             text: "Open form",
-            web_app: { url: "https://5fd8-37-214-30-223.ngrok-free.app" },
+            web_app: { url: "https://b693-37-214-30-223.ngrok-free.app" },
           },
         ],
       ],
