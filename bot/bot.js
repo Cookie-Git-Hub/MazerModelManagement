@@ -1,6 +1,6 @@
 // bot/bot.js
 const axios = require("axios");
-const FormData = require("form-data"); // Убедитесь, что form-data установлена
+const FormData = require("form-data"); 
 const { telegramToken, chatId } = require("../config");
 const TELEGRAM_API = `https://api.telegram.org/bot${telegramToken}`;
 const { Telegraf } = require("telegraf");

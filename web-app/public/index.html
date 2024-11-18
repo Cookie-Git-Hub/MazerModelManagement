@@ -13,50 +13,52 @@
     <img src="/img/image_processin.gif" alt="preloader">
   </div>
 <div id='Form'> 
-  <form id="contactForm">
-    <div class="form-container">
+  <div class="form-container">
+    <form id="contactForm">
+    
       <div class="question" id="question-1">
         <div class="language" >
           <h2>Mazer Model Management</h2>
           <p>Обрати мову / Choose a language</p>
-          <div></div>
-            <button class="language-button" onclick="setLanguage('ua')"><img src="/img/Ukraine_Flag.png"></button>
-            <button class="language-button" onclick="setLanguage('en')"><img src="/img/USA_Flag.png"></button>
+          <div style="display: flex; padding-left: 23%;">
+            <div class="language-button" onclick="setLanguage('ua')"><img src="/img/Ukraine_Flag.png"></div>
+            <div class="language-button" onclick="setLanguage('en')"><img src="/img/USA_Flag.png"></div>
           </div> 
-        <div> 
-          <h3 class="subtitle ua" data-en="Wanna be a model?" data-ua="Хочеш стати моделлю?">Wanna be a model?</h3>
-          <h4 data-en="What is your name?" data-ua="Як тебе звати?">What is your name?</h4>
-          <div class="inputbox">
-            <input required="required" id="input" type="text" name="name" required><span>Name</span>
-            <i></i>
-          </div>
+          <div> 
+            <h3 class="subtitle ua" data-en="Wanna be a model?" data-ua="Хочеш стати моделлю?">Wanna be a model?</h3>
+            <h4 data-en="What is your name?" data-ua="Як тебе звати?">What is your name?</h4>
+            <div class="inputbox">
+              <input id="input" type="text" name="name" ><span>Name</span>
+              <i></i>
+            </div>
+          </div>  
         </div>
       </div>
       <div class="question" id="question-2">
         <h4 data-en="What is your height (cm)?" data-ua="Який твій зріст (см)?">What is your height (cm)?</h4>
         <div class="inputbox">
-          <input id="input" type="number" name="height" class="input-field" placeholder="180" required>
+          <input id="input" type="number" name="height" class="input-field" placeholder="180" >
           <i></i>
         </div>
       </div> 
       <div class="question" id="question-3">
         <h4 data-en="How old are you?" data-ua="Скільки тобі років?">How old are you?</h4>
         <div class="inputbox">
-          <input id="input" type="number" name="age" class="input-field" placeholder="18" required>
+          <input id="input" type="number" name="age" class="input-field" placeholder="18" >
           <i></i>
         </div>
       </div>
       <div class="question" id="question-4">  
         <h4 data-en="What is your nationality?" data-ua="Яка твоя національність?">What is your nationality?</h4>
         <div class="inputbox">
-          <input id="input" type="text" name="nationality" class="input-field" required><span>Country</span>
+          <input id="input" type="text" name="nationality" class="input-field" ><span>Country</span>
           <i></i>
         </div>
       </div>
       <div class="question" id="question-5"> 
         <h4 data-en="Where are you based?" data-ua="Де ти проживаєш?">Where are you based?</h4>
         <div class="inputbox">
-          <input id="input" type="text" name="based" class="input-field" required><span>Country</span>
+          <input id="input" type="text" name="based" class="input-field" ><span>Country</span>
           <i></i>
         </div>
       </div>
@@ -69,15 +71,15 @@
           <h4 data-en="What is your measurements (bust/waist/hips)?" data-ua="Які твої параметри (груди/талія/стегна)?">What is your measurements (bust/waist/hips)?</h4>
           <div style="width: 70%; margin: 0 auto;">
             <div class="inputbox">
-              <input id="input" type="number" name="bust" class="input-field" required>
+              <input id="input" type="number" name="bust" class="input-field" >
               <i></i>
             </div>
             <div class="inputbox">
-              <input id="input" type="number" name="waist" class="input-field" required>
+              <input id="input" type="number" name="waist" class="input-field" >
               <i></i>
             </div>
             <div class="inputbox">
-              <input id="input" type="number" name="hips" class="input-field" required>
+              <input id="input" type="number" name="hips" class="input-field" >
               <i></i>
             </div>
           </div>
@@ -86,14 +88,14 @@
       <div class="question" id="question-7"> 
         <h4 data-en="What is your instagram?" data-ua="Який твій Instagram?">What is your instagram?</h4> 
         <div class="inputbox">
-          <input id="input" type="text" name="instagram" class="input-field" required><span>@nickname</span>
+          <input id="input" type="text" name="instagram" class="input-field" ><span>@nickname</span>
           <i></i>
         </div>
       </div>
       <div class="question" id="question-8"> 
         <h4 data-en="What is your contact number/nickname in telegram?" data-ua="Який твій контактний номер або нікнейм у Telegram?">What is your contact number/nickname in telegram?</h4>
         <div class="inputbox">
-          <input id="input" type="text" name="contact" class="input-field" required><span>Number/Nickname</span>
+          <input id="input" type="text" name="contact" class="input-field" ><span>Number/Nickname</span>
           <i></i>
         </div>
       </div> 
@@ -131,29 +133,27 @@
               </span>
               <span class="upload-text">Upload</span>
             </label>
-            <input type="file" id="fileInput" name="files" accept="image/*,video/*" multiple required style="display: none;">
+            <input type="file" id="fileInput" name="files" accept="image/*,video/*" multiple  style="display: none;">
           </div>
           <div id="previewContainer" class="preview-container"></div>
         </div>
-        
       </div>
       <div class="question" id="question-10">
         <h4 data-en="About me" data-ua="Про себе">About me</h4>
         <div class="inputbox">
-          <input id="input" type="text" name="about" class="input-field" required><span>Text...</span>
+          <input id="input" type="text" name="about" class="input-field" ><span>Text...</span>
           <i></i>
         </div>
-        <button type="submit" data-en="Submit →" data-ua="Подати заявку →" required>Submit →</button>
-        
+        <button type="submit" data-en="Submit →" data-ua="Подати заявку →">Submit →</button>
       </div>
-      <div>
-        <button id="prev-btn" data-en="← Back" data-ua="← Назад" onclick="previousQuestion()" style="display: none;">← Back</button>
-        <button id="next-btn" data-en="Next →" data-ua="Далее →" onclick="nextQuestion()"  >Next →</button>
-      </div>
-      <div id="loadingSpinner" class="loading-spinner" style="display: none;"></div>
+      <div id="loadingSpinner" class="loading-spinner" style="display: none; margin-left: 43%;"></div>
+    </form> 
+    <div class="button">
+      <button id="prev-btn" data-en="← Back" data-ua="← Назад" onclick="previousQuestion()" style="display: none;">← Back</button>
+      <button id="next-btn" data-en="Next →" data-ua="Далее →" onclick="nextQuestion()" >Next →</button>
     </div>
-  </form>
-</div> 
+  </div> 
+</div>
   <script src="app.js"></script> 
 </body>
 </html>

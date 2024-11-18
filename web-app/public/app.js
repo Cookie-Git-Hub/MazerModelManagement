@@ -25,19 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
-document.querySelectorAll('input, textarea').forEach(input => {
-  input.addEventListener('focus', () => {
-      setTimeout(() => {
-          window.scrollTo({
-              top: input.getBoundingClientRect().top + window.scrollY - 100, // -100 отодвигает немного выше
-              behavior: 'smooth'
-          });
-      }, 300);
-  });
-});
-
 let currentQuestion = 0;
 const questions = document.querySelectorAll('.question');
 const nextButton = document.getElementById('next-btn');
@@ -132,7 +119,7 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
     const loadingSpinner = document.getElementById('loadingSpinner');
 
     if (submitButton) {
-      submitButton.style.display = 'none'; // можно также использовать submitButton.disabled = true
+      submitButton.style.display = 'none';
     }
     if (loadingSpinner) {
       loadingSpinner.style.display = 'inline-block';
@@ -165,7 +152,7 @@ function handleFileSelect(event) {
   const files = Array.from(event.target.files);
 
   if (selectedFiles.length + files.length > 8) {
-    alert("Вы можете загрузить не более 8 файлов.");
+    alert("You can upload no more than 8 files.");
     return;
   }
 

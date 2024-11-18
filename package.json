@@ -11,10 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.7.7",
+    "crypto": "^1.0.1",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "form-data": "^4.0.1",
-    "multer": "^1.4.5-lts.1",
+    "FormData": "^0.10.1",
     "telegraf": "^4.16.3"
   }
 }
