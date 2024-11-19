@@ -24,7 +24,7 @@ bot.start((ctx) => {
 bot.launch();
 
 async function sendMessageToTelegram(data, files) {
-  const messageText = `📋Подана новая заявка📋\n <b>Имя:</b> ${data.name}\n <b>Рост:</b> ${data.height}\n <b>Возраст:</b> ${data.age}\n <b>Национальность:</b> ${data.nationality}\n <b>Проживает:</b> ${data.based}\n <b>Замеры:</b> ${data.bust}/${data.waist}/${data.hips}\n <b>Instagram:</b> ${data.instagram}\n <b>Контактные данные:</b> ${data.contact}\n <b>О себе:</b> ${data.about}`;
+  const messageText = `📋Подана новая заявка📋\n <b>Имя:</b> ${data.name}\n <b>Рост:</b> ${data.height}\n <b>Возраст:</b> ${data.age}\n <b>Национальность:</b> ${data.nationality}\n <b>Проживает:</b> ${data.based}\n <b>Параметры:</b> ${data.bust}/${data.waist}/${data.hips}\n <b>Instagram:</b> ${data.instagram}\n <b>Контактные данные:</b> ${data.contact}\n <b>О себе:</b> ${data.about}`;
 
   await axios.post(`${TELEGRAM_API}/sendMessage`, {
     chat_id: chatId,

@@ -65,7 +65,7 @@ function previousQuestion() {
 }
 
 function updateButtons() {
-  if (currentQuestion > 0 && currentQuestion !== 10) {
+  if (currentQuestion > 0 && currentQuestion !== 12) {
     prevButton.style.padding = "10px 20px";
     prevButton.style.backgroundColor = "rgb(56, 56, 56)";
     prevButton.style.color = "white";
