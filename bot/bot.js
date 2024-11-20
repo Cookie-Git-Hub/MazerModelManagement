@@ -13,7 +13,7 @@ bot.start((ctx) => {
         [
           {
             text: "Open form",
-            web_app: { url: "https://b693-37-214-30-223.ngrok-free.app" },
+            web_app: { url: "https://mazer-model-management-d8442e8f971d.herokuapp.com/" },
           },
         ],
       ],
