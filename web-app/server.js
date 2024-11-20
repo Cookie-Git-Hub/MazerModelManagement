@@ -1,5 +1,6 @@
 const express = require("express");
 const multer = require("multer");
+require('dotenv').config();
 const { sendMessageToTelegram } = require("../bot/bot.js");
 const { serverPort } = require("../config.js");
 const crypto = require("crypto");
