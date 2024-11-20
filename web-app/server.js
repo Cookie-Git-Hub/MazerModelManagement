@@ -1,12 +1,12 @@
 const express = require("express");
 const multer = require("multer");
 const { sendMessageToTelegram } = require("../bot/bot.js");
-const { serverPort } = require("../config");
+const { serverPort } = require("../config.js");
 const crypto = require("crypto");
 const app = express();
 const upload = multer();
 
-const { telegramToken } = require("../config");
+const { telegramToken } = require("../config.js");
 const BOT_TOKEN = telegramToken;
 const SECRET_KEY = crypto
   .createHmac("sha256", BOT_TOKEN)
