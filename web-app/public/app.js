@@ -38,24 +38,25 @@ closeModalBtn.addEventListener('click', () => {
   formContainer.style.display = 'block'; 
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
-  const input = document.querySelector("#input");
-  const span = input.nextElementSibling;
+  const inputs = document.querySelectorAll(".inputbox input");
 
-  input.addEventListener("input", () => {
-    if (input.value.trim() !== "") {
-      span.style.transform = "translateY(-34px)";
-      span.style.fontSize = "0.75em";
-      span.style.color = "#8f8f8f";
-    } else {
-      span.style.transform = "translateY(0)";
-      span.style.fontSize = "1em";
-      span.style.color = "#8f8f8f";
-    }
+  inputs.forEach(input => {
+    const span = input.nextElementSibling;
+
+    input.addEventListener("input", () => {
+      if (input.value.trim() !== "") {
+        span.style.transform = "translateY(-34px)";
+        span.style.fontSize = "0.75em";
+        span.style.color = "#8f8f8f";
+      } else {
+        span.style.transform = "translateY(0)";
+        span.style.fontSize = "1em";
+        span.style.color = "#8f8f8f";
+      }
+    });
   });
 });
-
 
 let currentQuestion = 0;
 const questions = document.querySelectorAll('.question');
