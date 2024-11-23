@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const initData = window.Telegram.WebApp.initData;
 
   // fetch(`https://58fe-37-214-59-100.ngrok-free.app/validate`, {
-  fetch(`https://mazer-model-management-d8442e8f971d.herokuapp.com/validate`, {
+  fetch(`https://mazer-model-management-3052272b101b.herokuapp.com/validate`, {
     
     method: "POST",
     headers: {

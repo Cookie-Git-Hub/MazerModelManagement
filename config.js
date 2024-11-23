@@ -4,6 +4,6 @@ module.exports = {
     telegramToken: process.env.BOT_TOKEN,
     chatId: process.env.CHAT_ID,
     URL: process.env.URL,
-    serverPort: 8080
+    serverPort: process.env.PORT
   };
 
