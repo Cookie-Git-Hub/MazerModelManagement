@@ -1,13 +1,12 @@
 const express = require("express");
 const multer = require("multer");
 const { sendMessageToTelegram } = require("../bot/bot.js");
-const { serverPort } = require("../config");
+const { serverPort, telegramToken } = require("../config");
 const crypto = require("crypto");
 const app = express();
 const upload = multer();
-
-const { telegramToken } = require("../config");
 const BOT_TOKEN = telegramToken;
+
 const SECRET_KEY = crypto
   .createHmac("sha256", BOT_TOKEN)
   .update("WebAppData")
@@ -17,10 +16,10 @@ app.use(express.json());
 app.use(express.static("./web-app/public"));
 
 let validateTelegramWebApp = false
+let validateTelegramInitData 
 
 app.post("/validate", (req, res) => {
   const initData = req.body.initData;
-
   function validateTelegramWebAppData(initData, BOT_TOKEN) {
     const secretKey = crypto
       .createHmac("sha256", "WebAppData")
@@ -42,6 +41,7 @@ app.post("/validate", (req, res) => {
       .digest("hex");
 
     validateTelegramWebApp = calculatedHash === hash;
+    validateTelegramInitData = initDataParams;
     console.log(validateTelegramWebApp);
 
     if (calculatedHash === hash) {
@@ -69,9 +69,14 @@ app.post("/submit", upload.array("files", 8), async (req, res) => {
         instagram,
         contact,
         about,
+        language,
       } = req.body;
-      const files = req.files;
 
+      const validatedData = validateTelegramInitData.get("user")
+      const user = JSON.parse(validatedData);
+      const userID = user.id;
+      const files = req.files;
+      const instagram_link = `https://www.instagram.com/${instagram.replace('@','')}`
       if (
         !name ||
         !height ||
@@ -109,9 +114,11 @@ app.post("/submit", upload.array("files", 8), async (req, res) => {
           bust,
           waist,
           hips,
-          instagram,
+          instagram_link,
           contact,
           about,
+          userID,
+          language,
         },
         files
       );

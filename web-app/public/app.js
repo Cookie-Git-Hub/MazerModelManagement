@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const initData = window.Telegram.WebApp.initData;
 
-  fetch(`https://b693-37-214-30-223.ngrok-free.app/validate`, {
+  // fetch(`https://58fe-37-214-59-100.ngrok-free.app/validate`, {
+  fetch(`https://mazer-model-management-d8442e8f971d.herokuapp.com/validate`, {
+    
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -24,6 +26,36 @@ document.addEventListener("DOMContentLoaded", () => {
     window.Telegram.WebApp.close();
   });
 });
+
+
+const modal = document.getElementById('info-modal');
+const closeModalBtn = document.getElementById('close-modal');
+const formContainer = document.getElementById('form-container');
+
+
+closeModalBtn.addEventListener('click', () => {
+  modal.style.display = 'none'; 
+  formContainer.style.display = 'block'; 
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.querySelector("#input");
+  const span = input.nextElementSibling;
+
+  input.addEventListener("input", () => {
+    if (input.value.trim() !== "") {
+      span.style.transform = "translateY(-34px)";
+      span.style.fontSize = "0.75em";
+      span.style.color = "#8f8f8f";
+    } else {
+      span.style.transform = "translateY(0)";
+      span.style.fontSize = "1em";
+      span.style.color = "#8f8f8f";
+    }
+  });
+});
+
 
 let currentQuestion = 0;
 const questions = document.querySelectorAll('.question');
@@ -97,6 +129,7 @@ function setLanguage(lang) {
   document.querySelectorAll("[data-en]").forEach((el) => {
     el.innerText = el.getAttribute(`data-${lang}`);
   });
+  document.getElementById("selectedLanguage").value = lang;
 }
 
 document.addEventListener('keydown', function(event) {

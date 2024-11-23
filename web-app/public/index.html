@@ -15,13 +15,20 @@
   <div id='preloader'>
     <img src="/img/image_processin.gif" alt="preloader">
   </div>
-<div id='Form'> 
+<div id='Form' class='Form'> 
   <div class="form-container">
+    <div id="info-modal" class="modal">
+      <div class="modal-content">
+        <p> Вітаємо в модельному агенстві MAZER MODELS! За допомогою цього телеграм-боту ви можете подати заяку у наше агентство.</p>
+        <p> Welcome to MAZER MODELS! With the help of this Telegram bot, you can submit an application to our agency.</p>
+        <button id="close-modal" class="btn">Go</button>
+      </div>
+    </div>
     <form id="contactForm">
-    
       <div class="question" id="question-1">
         <div class="language" >
           <h2>MAZER MODEL MANAGEMENT</h2>
+          <input style="display: none;" type="hidden" id="selectedLanguage" name="language" value="en">
           <p>Обрати мову / Choose a language</p>
           <div style="display: flex; justify-content: center;">
             <div style="display: flex;">
@@ -109,10 +116,10 @@
           <input style="display: none;" value="C++ Dev, Cookie"></input>
           <h4 data-en="Example for adding photos and videos" data-ua="Приклад для додавання фото та відео">Example for adding photos and videos</h4>
           <div class="grid-container">
-            <div class="grid-item1"><img class="img_exemple1" src="/img/ExempleF1.jpg"></div>
-            <div class="grid-item2"><img class="img_exemple1" src="/img/ExempleF2.jpg"></div>
-            <div class="grid-item3"><img class="img_exemple1" src="/img/ExempleF3.jpg"></div>
-            <div class="grid-item4"><img class="img_exemple1" src="/img/ExempleF4.jpg"></div>
+            <div class="grid-item1" style="margin-left: auto;"><img class="img_exemple1" src="/img/ExempleF1.jpg"></div>
+            <div class="grid-item2" style="margin-right: auto;"><img class="img_exemple1" src="/img/ExempleF2.jpg"></div>
+            <div class="grid-item3" style="margin-left: auto;"><img class="img_exemple1" src="/img/ExempleF3.jpg"></div>
+            <div class="grid-item4" style="margin-right: auto;"><img class="img_exemple1" src="/img/ExempleF4.jpg"></div>
           </div>
         </div>
       </div>  
@@ -147,7 +154,7 @@
           <div class="instructions" style="padding-bottom: 10px;" class="instructions">
             <h4 data-en="Add photos or videos (Max. 8)" data-ua="Додайте фото або відео (Макс. 8)">Add photos or videos (Max. 8)</h4>
             <strong data-en="Media requirements" data-ua="Вимога до медіа">Media requirements</strong>
-            <h4 style="font-size: 14px; font-weight: lighter;" data-en="Stand in front of the window and take a selfie or video right in the bot. Use minimal makeup on your face and do not retouch the media." data-ua="Встаньте перед вікном і зробіть селфи або зніміть відео прямо в роботі. Використовуйте мінімум макіяжу на обличчі та не ретушуйте медіа.">Stand in front of the window and take a selfie or video right in the bot. Use minimal makeup on your face and do not retouch the media.</h4>
+            <h4 style="font-size: 14px; font-weight: lighter;" data-en="Stand in front of the window and take a selfie or video right in the bot. Use minimal makeup on your face and do not retouch the media." data-ua="Встаньте перед вікном і зробіть селфi або зніміть відео прямо в роботі. Використовуйте мінімум макіяжу на обличчі та не ретушуйте медіа.">Stand in front of the window and take a selfie or video right in the bot. Use minimal makeup on your face and do not retouch the media.</h4>
           </div>
           <div class="upload-container">
             <label for="fileInput" class="upload-button">
