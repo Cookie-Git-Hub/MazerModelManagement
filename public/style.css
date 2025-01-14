@@ -1,0 +1,395 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding-bottom: 150px;
+  padding-top: 30px;
+  overflow-y: scroll; 
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  z-index: 9999;
+}
+
+#preloader.preloader-hidden {
+  display: none;
+}
+
+h2 {
+  color: rgb(56, 56, 56);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  max-height: 100%;
+}
+
+.button {
+  text-align: center;
+}
+
+label {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+
+.form-container {
+  min-width: 250px;
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+  display: none;
+  animation: fadeIn 1s ease-out;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #313131;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: rgb(56, 56, 56);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+button:disabled {
+  display: none;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.language-button {
+  width: 70px;
+  height: 42px;
+  padding: 0;
+  border: 2px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 3px;
+}
+
+.language-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.exemple {
+  height: 95%;
+  object-fit: cover;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+
+.grid-item1{
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.grid-item2{
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.grid-item3{
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.grid-item4{
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.grid-item1, .grid-item2, .grid-item3, .grid-item4 {
+  display: inline-block;
+}
+
+.grid-item1 img, .grid-item2 img, .grid-item3 img, .grid-item4 img {
+  width: auto;
+  height: 200px;
+  max-width: 100%;
+}
+
+
+
+.img_exemple1 {
+  width: 20%;
+  object-fit: cover;
+}
+
+.exemple_video1 {
+  width: 100%;
+}
+
+.exemple_video {
+  width: 45%;
+  float: left;
+}
+
+
+.exemple_video_div{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+.instructions{
+  border-radius: 7px;
+  background-color: rgb(196, 197, 207, 0.41);
+}
+.loading-spinner {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  border-top-color: #333;
+  animation: spin 1s ease-in-out infinite;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.inputbox {
+  position: relative;
+  width: 196px;
+  margin: 0 auto;
+}
+
+.inputbox input {
+  position: relative;
+  width: 90%;  
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.inputbox span {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  padding: 20px 0px 10px;
+  font-size: 1em;
+  color: #8f8f8f;
+  letter-spacing: 00.05em;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+
+
+.inputbox input:focus ~span {
+  color: #8f8f8f;
+  transform: translateY(-34px);
+  font-size: 0,75em;
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #8f8f8f;
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+  margin-bottom: 13px;
+}
+
+.inputbox input:focus ~i {
+  height: 34px;
+}
+
+.photos_and_videos_content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.media-requirements {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  border: 2px dashed #ddd;
+  border-radius: 10px;
+  color: #888;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.upload-button:hover {
+  border-color: #555;
+  color: #555;
+}
+
+.upload-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.preview-item {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.preview-item img,
+.preview-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  animation: modal 1s ease-out;
+}
+
+
+@keyframes modal {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 70%;
+
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.Form{
+  margin: 0 auto;
+}
