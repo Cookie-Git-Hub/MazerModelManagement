@@ -393,3 +393,8 @@ button:disabled {
 .Form{
   margin: 0 auto;
 }
+
+.input-field.error-placeholder::placeholder {
+  color: #ff0000;
+  opacity: 1;
+}
