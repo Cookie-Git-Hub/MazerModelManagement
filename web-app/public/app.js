@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const initData = window.Telegram.WebApp.initData;
 
-  // fetch(`https://58fe-37-214-59-100.ngrok-free.app/validate`, {
+  // fetch(`https://9a0e-185-252-220-117.ngrok-free.app/validate`, {
   fetch(`https://mazer-model-management-3052272b101b.herokuapp.com/validate`, {
     
     method: "POST",
@@ -38,25 +38,24 @@ closeModalBtn.addEventListener('click', () => {
   formContainer.style.display = 'block'; 
 });
 
+
 document.addEventListener("DOMContentLoaded", () => {
-  const inputs = document.querySelectorAll(".inputbox input");
+  const input = document.querySelector("#input");
+  const span = input.nextElementSibling;
 
-  inputs.forEach(input => {
-    const span = input.nextElementSibling;
-
-    input.addEventListener("input", () => {
-      if (input.value.trim() !== "") {
-        span.style.transform = "translateY(-34px)";
-        span.style.fontSize = "0.75em";
-        span.style.color = "#8f8f8f";
-      } else {
-        span.style.transform = "translateY(0)";
-        span.style.fontSize = "1em";
-        span.style.color = "#8f8f8f";
-      }
-    });
+  input.addEventListener("input", () => {
+    if (input.value.trim() !== "") {
+      span.style.transform = "translateY(-34px)";
+      span.style.fontSize = "0.75em";
+      span.style.color = "#8f8f8f";
+    } else {
+      span.style.transform = "translateY(0)";
+      span.style.fontSize = "1em";
+      span.style.color = "#8f8f8f";
+    }
   });
 });
+
 
 let currentQuestion = 0;
 const questions = document.querySelectorAll('.question');
@@ -182,23 +181,34 @@ let selectedFiles = [];
 
 fileInput.addEventListener('change', handleFileSelect);
 
+
 function handleFileSelect(event) {
+  const MAX_FILES = 8; 
+  const MAX_TOTAL_SIZE_MB = 50; 
+  const MAX_TOTAL_SIZE_BYTES = MAX_TOTAL_SIZE_MB * 1024 * 1024;
+
   const files = Array.from(event.target.files);
+  let totalSize = selectedFiles.reduce((sum, file) => sum + file.size, 0); 
 
-  if (selectedFiles.length + files.length > 8) {
-    alert("You can upload no more than 8 files.");
-    return;
-  }
-
-  files.forEach((file) => {
-    if (selectedFiles.length < 8) {
-      selectedFiles.push(file);
-      displayFile(file);
+  for (const file of files) {
+    if (selectedFiles.length >= MAX_FILES) {
+      alert("You can upload no more than 8 files.");
+      break;
     }
-  });
+
+    if (totalSize + file.size > MAX_TOTAL_SIZE_BYTES) {
+      alert(`The total volume of downloaded files exceeds 50 ${MAX_TOTAL_SIZE_MB} MB.`);
+      break;
+    }
+
+    selectedFiles.push(file);
+    totalSize += file.size;
+    displayFile(file);
+  }
 
   updateFileInput();
 }
+
 
 function displayFile(file) {
   const previewItem = document.createElement('div');
