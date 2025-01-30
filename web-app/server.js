@@ -104,6 +104,16 @@ app.post("/submit", upload.array("files", 8), async (req, res) => {
           .send({ success: false, message: "You must attach files." });
       }
 
+      const totalSize = files.reduce((sum, file) => sum + file.size, 0); 
+      const MAX_SIZE_MB = 50;
+      if (totalSize > MAX_SIZE_MB * 1024 * 1024) {
+        console.error("Error: Total file size exceeds the limit");
+        return res.status(400).send({
+          success: false,
+          message: `Total file size exceeds ${MAX_SIZE_MB} MB. Please reduce the file sizes.`,
+        });
+      }
+
       await sendMessageToTelegram(
         {
           name,
