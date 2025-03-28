@@ -1,0 +1,77 @@
+.models-management-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.models-management-header {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.models-management-header h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.models-management-header p {
+  color: #6b7280;
+}
+
+/* Фильтры и поиск */
+.models-management-filters {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.models-management-filters input {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+.models-management-filters select {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+/* Таблица моделей */
+.models-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.models-table th {
+  background-color: #f9fafb;
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.models-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.models-table tr:hover {
+  background-color: #f3f4f6;
+}
+
+/* Пагинация */
+.models-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+}

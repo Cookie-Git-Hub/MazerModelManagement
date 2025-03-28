@@ -1,0 +1,106 @@
+.communications-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.communications-header {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.communications-header h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.communications-header p {
+  color: #6b7280;
+}
+
+/* Быстрые действия */
+.communications-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .communications-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Карточка быстрой статистики */
+.communications-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.communications-card h3 {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.communications-card p {
+  color: #6b7280;
+}
+
+/* Шаблоны сообщений */
+.communications-template-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+}
+
+.communications-template-card h3 {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.communications-template-card p {
+  color: #6b7280;
+}
+
+/* Недавние коммуникации */
+.communications-recent-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.communications-recent-item {
+  padding: 1.5rem;
+  transition: background-color 0.2s;
+}
+
+.communications-recent-item:hover {
+  background-color: #f9fafb;
+}
+
+.communications-status {
+  border-radius: 8px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.bg-sent {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.bg-scheduled {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.bg-draft {
+  background-color: #e5e7eb;
+  color: #374151;
+}

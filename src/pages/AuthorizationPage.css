@@ -1,0 +1,32 @@
+.authorization {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* background: linear-gradient(to bottom right, #0a0a0a, #1a1a1a); */
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.authorizationForm {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.243);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.authorization h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+.authorization p {
+  color: #a1a1a1;
+  margin: 0;
+  margin-bottom: 1rem;
+}
