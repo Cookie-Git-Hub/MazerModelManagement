@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const initData = window.Telegram.WebApp.initData;
   // fetch(`https://9a0e-185-252-220-117.ngrok-free.app/validate`, {
-  fetch(`https://mazer-model-management-3052272b101b.herokuapp.com/validate`, {
+  fetch(`https://web-production-5c260.up.railway.app/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
